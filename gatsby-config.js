@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
@@ -9,12 +11,24 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: "gatsby-plugin-page-creator",
       options: {
-        name: "images",
-        path: "./src/images/",
+        path: path.resolve(__dirname, "src/pages"),
+        ignore: ["**/sections/*", "**/options/*", "**/elements/*"],
       },
-      __key: "images",
+    },
+    {
+      resolve: "gatsby-plugin-resolve-src",
+      options: {
+        srcPath: path.resolve(__dirname, "src"),
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.resolve(__dirname, `src/assets/images`),
+      },
     },
   ],
 };
