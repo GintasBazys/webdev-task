@@ -4,7 +4,7 @@ import { black } from "styles/colors";
 export const TextBase = styled.p`
   margin: ${({ margin }) => margin || ""};
   font-family: ${({ fontFamily }) => fontFamily || "Gordita"};
-  font-size: ${({ fontSize }) => fontSize || ""};
+  font-size: ${({ fontSize }) => fontSize || "1rem"};
   font-weight: ${({ fontWeight }) => fontWeight || 500};
   color: ${({ color }) => color || black};
   text-align: ${({ textAlign }) => textAlign || ""};
@@ -14,4 +14,8 @@ export const TextBase = styled.p`
 
 export const TextBaseBold = styled(TextBase).attrs(({ fontWeight }) => ({
   fontWeight: fontWeight || 700,
+}))``;
+
+export const NavbarText = styled(TextBase).attrs(({ fontSize }) => ({
+  fontSize: "0.875rem",
 }))``;

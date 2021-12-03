@@ -1,5 +1,6 @@
 import React, { StrictMode } from "react";
 import { createGlobalStyle } from "styled-components";
+import "components/typography.css";
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -10,7 +11,7 @@ body {
     overflow: hidden auto;
 }
 html {
-    font-family: -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
+    font-family: "Gordita", -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
 }
 `;
 
