@@ -27,7 +27,7 @@ const Navbar = () => {
               My Account
             </NavbarText>
             <FlexWrapper>
-              <Button background={teal} width="6.25rem">
+              <Button background={teal}>
                 <TextBase fontSize="0.75rem" color={white}>
                   Open Vault
                 </TextBase>
@@ -46,6 +46,6 @@ const Wrapper = styled.div`
   position: sticky;
   top: 0;
   padding: 0.75rem 0;
-  box-shadow: 0rem 0.5rem 1.5rem rgba(0, 0, 0, 0.04);
+  /* box-shadow: 0rem 0.5rem 1.5rem rgba(0, 0, 0, 0.04); */
   z-index: 100;
 `;

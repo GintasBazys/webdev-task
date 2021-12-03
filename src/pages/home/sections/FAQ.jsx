@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import { ContainerSmall, GridWrapper, Box } from "components";
+import { ContainerSmall, GridWrapper, Box, TextBaseBold } from "components";
 
 import { white, lightestGrey } from "styles/colors";
-import { useQuery } from "styles/breakpoints";
 
 import { CollapsibleItem } from "../elements/CollapsibleItem";
 
@@ -52,8 +51,6 @@ const FAQ_ASSETS = [
 ];
 
 export const Faq = () => {
-  const { isMobile } = useQuery();
-
   const [selected, setSelected] = useState(null);
 
   const handleCollapse = (questionId) => {
@@ -63,8 +60,15 @@ export const Faq = () => {
 
   return (
     <Box background={lightestGrey}>
+      <TextBaseBold
+        padding="6rem 0 3.75rem"
+        fontSize="2.5rem"
+        textAlign="center"
+      >
+        Frequently asked questions
+      </TextBaseBold>
       <ContainerSmall>
-        <GridWrapper gap="0.5rem" margin="0 0 3rem">
+        <GridWrapper gap="0.75rem" margin="0 0 3rem">
           {FAQ_ASSETS?.map(({ id, title, description }) => {
             return (
               <DropdownWrapper key={id}>

@@ -36,7 +36,7 @@ const IconArrow = styled.div`
 
 const FlexWrapperStyled = styled(FlexWrapper)`
   cursor: pointer;
-
+  align-items: center;
   ${IconArrow} {
     ${({ selected }) => selected && `transform: rotate(180deg);`};
   }

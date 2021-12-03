@@ -3,6 +3,7 @@ import { black } from "styles/colors";
 
 export const TextBase = styled.p`
   margin: ${({ margin }) => margin || ""};
+  padding: ${({ padding }) => padding || ""};
   font-family: ${({ fontFamily }) => fontFamily || "Gordita"};
   font-size: ${({ fontSize }) => fontSize || "1rem"};
   font-weight: ${({ fontWeight }) => fontWeight || 500};

@@ -5,6 +5,7 @@ import GetStarted from "./sections/GetStarted";
 import { Faq } from "./sections/FAQ";
 import { Box } from "components";
 import { lightGreenBackground } from "styles/colors";
+import LeakedPasswords from "./sections/LeakedPasswords";
 
 const Landing = () => {
   return (
@@ -13,6 +14,7 @@ const Landing = () => {
         <Navbar />
         <GetStarted />
       </Box>
+      <LeakedPasswords />
       <Faq />
       <Footer />
     </>

@@ -5,6 +5,7 @@ export const Button = styled.button`
   display: ${({ display }) => display || "inline-block"};
   margin: ${({ margin }) => margin || ""};
   padding: ${({ padding }) => padding || "0.8rem 1.5rem"};
+  width: ${({ width }) => width || ""};
   font-size: ${({ fontSize }) => fontSize || "1rem"};
   color: ${({ color }) => color || white};
   background: ${({ background }) => background || "transparent"};
