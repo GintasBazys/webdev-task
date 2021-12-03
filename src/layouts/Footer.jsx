@@ -22,14 +22,10 @@ const Footer = () => {
               Terms of Service
             </TextBase>
           </FlexWrapper>
-          <FlexWrapper
-            color={darkGrey}
-            fontSize="0.625rem"
-            alignItems="end"
-            textAlign="end"
-            margin="0 0 0 auto"
-          >
-            Copyright © 2020 NordPass.com{" "}
+          <FlexWrapper alignItems="end" textAlign="end" margin="0 0 0 auto">
+            <TextBase color={darkGrey} fontSize="0.625rem">
+              Copyright © 2020 NordPass.com
+            </TextBase>
           </FlexWrapper>
         </FlexWrapper>
       </Container>
