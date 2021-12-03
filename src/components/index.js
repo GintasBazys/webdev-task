@@ -9,8 +9,10 @@ export * from "./wrappers/Container";
 export * from "./wrappers/ContainerSmall";
 export * from "./wrappers/FlexWrapper";
 export * from "./wrappers/GridWrapper";
-export * from "./wrappers/ContentFrameSmall";
 export * from "./wrappers/Box";
 
 //Texts
 export * from "./texts/TextBase";
+
+//Selects
+export * from "./selects/Select";

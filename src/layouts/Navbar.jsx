@@ -18,7 +18,7 @@ const Navbar = () => {
         <FlexWrapper alignItems="center">
           <Image src="np_logo" />
           <FlexWrapper margin="0 0 0 auto" alignItems="center">
-            <NavbarText>Features</NavbarText>
+            <NavbarText></NavbarText>
             <NavbarText margin="0 1.5rem">Pricing</NavbarText>
             <NavbarText>Apps</NavbarText>
             <NavbarText margin="0 1.5rem">Blog</NavbarText>

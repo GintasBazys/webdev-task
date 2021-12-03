@@ -6,3 +6,4 @@ export const lightGreenBackground = "#EDF8F7";
 export const grey = "#B9BABD";
 export const darkestGrey = "#383C43";
 export const darkGrey = "#373B42";
+export const lightGrey = "#E8E8E9";

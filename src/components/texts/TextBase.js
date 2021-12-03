@@ -19,4 +19,6 @@ export const TextBaseBold = styled(TextBase).attrs(({ fontWeight }) => ({
 
 export const NavbarText = styled(TextBase).attrs(({ fontSize }) => ({
   fontSize: "0.875rem",
-}))``;
+}))`
+  cursor: pointer;
+`;
