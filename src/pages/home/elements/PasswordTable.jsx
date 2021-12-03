@@ -11,12 +11,15 @@ import { fetchTopPasswords } from "apis/fetchPasswords";
 import { teal, white, lightGrey } from "styles/colors";
 import styled from "styled-components";
 import Password from "./Password";
+import { useQuery } from "styles/breakpoints";
 
 const PasswordTable = () => {
   const [sortCriteria, setSortCriteria] = useState("Count");
   const [passwords, setPasswords] = useState([]);
   const [showAll, setShowAll] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+
+  const { isSmMobile } = useQuery();
 
   useEffect(() => {
     fetchTopPasswords().then((data) => {
@@ -48,9 +51,13 @@ const PasswordTable = () => {
 
   return (
     <Container>
-      <FlexWrapper>
+      <FlexWrapper alignItems="center">
         <TextBaseBold fontSize="1.25rem">Password</TextBaseBold>
-        <CustomSelect value={sortCriteria} onChange={handleSort}>
+        <CustomSelect
+          width={isSmMobile ? "10rem" : "14rem"}
+          value={sortCriteria}
+          onChange={handleSort}
+        >
           <option>Count</option>
           <option>ABC</option>
         </CustomSelect>
@@ -71,7 +78,7 @@ const PasswordTable = () => {
           <Button
             onClick={handlePasswordShow}
             display="block"
-            margin="0 auto"
+            margin="0 auto 6rem"
             background={teal}
           >
             <TextBaseBold color={white}>

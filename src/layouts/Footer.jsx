@@ -26,6 +26,7 @@ const Footer = () => {
             color={darkGrey}
             fontSize="0.625rem"
             alignItems="end"
+            textAlign="end"
             margin="0 0 0 auto"
           >
             Copyright © 2020 NordPass.com{" "}

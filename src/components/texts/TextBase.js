@@ -11,6 +11,7 @@ export const TextBase = styled.p`
   text-align: ${({ textAlign }) => textAlign || ""};
   text-decoration: ${({ textDecoration }) => textDecoration || ""};
   text-transform: ${({ textTransform }) => textTransform || ""};
+  cursor: ${({ cursor }) => cursor || ""};
 `;
 
 export const TextBaseBold = styled(TextBase).attrs(({ fontWeight }) => ({

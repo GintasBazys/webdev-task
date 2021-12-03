@@ -10,18 +10,25 @@ import {
   Box,
 } from "components";
 import { teal, white, lightGreenBackground } from "styles/colors";
+import { useQuery } from "styles/breakpoints";
 
 const GetStarted = () => {
+  const { isTablet, isSmMobile } = useQuery();
+
   return (
     <>
       <Box background={lightGreenBackground}>
         <Container margin="0 auto">
-          <GridWrapper padding="6rem 0 0" columns={2}>
-            <FlexWrapper flexDirection="column" justifyContent="center">
+          <GridWrapper padding="6rem 0 0" columns={isTablet ? 1 : 2}>
+            <FlexWrapper
+              flexDirection="column"
+              justifyContent="center"
+              alignItems={isTablet ? "center" : "left"}
+            >
               <TextBaseBold
                 margin="2rem 0 2.25rem"
-                fontSize="3rem"
-                textAlign="left"
+                fontSize={isSmMobile ? "2rem" : "3rem"}
+                textAlign={isTablet ? "center" : "left"}
               >
                 Get your passwords organized
               </TextBaseBold>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Image,
   Container,
@@ -9,21 +9,29 @@ import {
 } from "components";
 
 import styled from "styled-components";
-import { teal, white, lightGreenBackground } from "styles/colors";
+import { teal, white, lightGreenBackground, black } from "styles/colors";
+import { useQuery } from "../styles/breakpoints";
+import NavigationItems from "./NavBarNavigationItems";
 
 const Navbar = () => {
+  const { isTablet } = useQuery();
+
   window.onscroll = () => {
     if (
       document.body.scrollTop > 80 ||
       document.documentElement.scrollTop > 80
     ) {
       document.getElementsByClassName("navbar")[0].style.background = white;
-      // document.getElementsByClassName("navbar")[0].style.boxShadow =
-      //   "0rem 0.5rem 1.5rem rgba(0, 0, 0, 0.04)";
     } else {
       document.getElementsByClassName("navbar")[0].style.background =
         lightGreenBackground;
     }
+  };
+
+  const [isShown, setIsShown] = useState(false);
+
+  const showNavigationItems = () => {
+    setIsShown(!isShown);
   };
 
   return (
@@ -31,24 +39,39 @@ const Navbar = () => {
       <Container>
         <FlexWrapper alignItems="center">
           <Image src="np_logo" />
-          <FlexWrapper margin="0 0 0 auto" alignItems="center">
-            <NavbarText></NavbarText>
-            <NavbarText margin="0 1.5rem">Pricing</NavbarText>
-            <NavbarText>Apps</NavbarText>
-            <NavbarText margin="0 1.5rem">Blog</NavbarText>
-            <NavbarText>Help</NavbarText>
-            <NavbarText color={teal} margin="0 1.5rem">
-              My Account
-            </NavbarText>
-            <FlexWrapper>
+          {isTablet ? (
+            <FlexWrapper margin="0 0 0 auto" alignItems="center">
+              <Button background={teal}>
+                <TextBase fontSize="0.75rem" color={white}>
+                  Open Vault
+                </TextBase>
+              </Button>
+              <BarContainer onClick={showNavigationItems}>
+                <Bar1 />
+                <Bar2 />
+                <Bar3 />
+              </BarContainer>
+            </FlexWrapper>
+          ) : (
+            <FlexWrapper margin="0 0 0 auto" alignItems="center">
+              <NavbarText>Features</NavbarText>
+              <NavbarText margin="0 1.5rem">Pricing</NavbarText>
+              <NavbarText>Apps</NavbarText>
+              <NavbarText margin="0 1.5rem">Blog</NavbarText>
+              <NavbarText>Help</NavbarText>
+              <NavbarText color={teal} margin="0 1.5rem">
+                My Account
+              </NavbarText>
+
               <Button background={teal}>
                 <TextBase fontSize="0.75rem" color={white}>
                   Open Vault
                 </TextBase>
               </Button>
             </FlexWrapper>
-          </FlexWrapper>
+          )}
         </FlexWrapper>
+        {isShown && isTablet ? <NavigationItems /> : ""}
       </Container>
     </Wrapper>
   );
@@ -60,6 +83,33 @@ const Wrapper = styled.div`
   position: sticky;
   top: 0;
   padding: 0.75rem 0;
-  transition: 0.4s;
+  transition: all 0.3s ease;
   z-index: 100;
+`;
+
+export const BarContainer = styled.div`
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 0 0 2rem;
+`;
+
+export const Bar1 = styled.div`
+  width: 1.875rem;
+  height: 3px;
+  background-color: ${black};
+  margin: 6px 0;
+`;
+
+export const Bar2 = styled.div`
+  width: 1.875rem;
+  height: 3px;
+  background-color: ${black};
+  margin: 6px 0;
+`;
+
+export const Bar3 = styled.div`
+  width: 1.875rem;
+  height: 3px;
+  background-color: ${black};
+  margin: 6px 0;
 `;

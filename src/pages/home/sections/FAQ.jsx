@@ -7,9 +7,12 @@ import { white, lightestGrey } from "styles/colors";
 
 import { CollapsibleItem } from "../elements/CollapsibleItem";
 import { FAQ_ASSETS } from "../elements/utils";
+import { useQuery } from "styles/breakpoints";
 
 export const Faq = () => {
   const [selected, setSelected] = useState(null);
+
+  const { isSmMobile } = useQuery();
 
   const handleCollapse = (questionId) => {
     if (questionId === selected) setSelected(null);
@@ -17,16 +20,16 @@ export const Faq = () => {
   };
 
   return (
-    <Box zIndex="1" background={lightestGrey}>
+    <Box background={lightestGrey}>
       <TextBaseBold
         padding="6rem 0 3.75rem"
-        fontSize="2.5rem"
+        fontSize={isSmMobile ? "1.5rem" : "2.5rem"}
         textAlign="center"
       >
         Frequently asked questions
       </TextBaseBold>
       <ContainerSmall>
-        <GridWrapper gap="0.75rem" margin="0 0 3rem">
+        <GridWrapper padding="0 0 6rem" gap="0.75rem" margin="0 0 3rem">
           {FAQ_ASSETS?.map(({ id, title, description }) => {
             return (
               <DropdownWrapper key={id}>
