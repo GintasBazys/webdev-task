@@ -10,10 +10,8 @@ import LeakedPasswords from "./sections/LeakedPasswords";
 const Landing = () => {
   return (
     <>
-      <Box background={lightGreenBackground}>
-        <Navbar />
-        <GetStarted />
-      </Box>
+      <Navbar />
+      <GetStarted />
       <LeakedPasswords />
       <Faq />
       <Footer />

@@ -7,6 +7,7 @@ export const GridWrapper = styled.div`
   align-items: ${({ alignItems }) => alignItems || ""};
   justify-items: ${({ justifyItems }) => justifyItems || ""};
   margin: ${({ margin }) => margin || ""};
+  padding: ${({ padding }) => padding || ""};
   width: ${({ width }) => width || ""};
   max-width: ${({ maxWidth }) => maxWidth || ""};
 `;

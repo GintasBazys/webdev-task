@@ -17,7 +17,7 @@ export const Faq = () => {
   };
 
   return (
-    <Box background={lightestGrey}>
+    <Box zIndex="1" background={lightestGrey}>
       <TextBaseBold
         padding="6rem 0 3.75rem"
         fontSize="2.5rem"
@@ -32,6 +32,7 @@ export const Faq = () => {
               <DropdownWrapper key={id}>
                 <CollapsibleItem
                   title={title}
+                  description={description}
                   onClick={() => handleCollapse(id)}
                   isSelected={selected === id}
                 >

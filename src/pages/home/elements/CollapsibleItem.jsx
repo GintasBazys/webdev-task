@@ -2,9 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 import { FlexWrapper, Image, TextBase } from "components";
+import { darkGrey } from "styles/colors";
 
 export const CollapsibleItem = ({
-  children,
+  description,
   title,
   isSelected = false,
   onClick,
@@ -19,8 +20,8 @@ export const CollapsibleItem = ({
       </IconArrow>
     </FlexWrapperStyled>
     {isSelected && (
-      <TextBase fontWeight={400} margin="1rem 0 0">
-        {children}
+      <TextBase color={darkGrey} margin="1rem 0 0">
+        {description}
       </TextBase>
     )}
   </>

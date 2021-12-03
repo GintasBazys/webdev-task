@@ -4,51 +4,48 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby minimal starter
+  NordPass business page
 </h1>
 
 ## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
+1.  **Project setup**
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+    Clone git repository in the terminal window by entering:
 
     ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
+    git clone https://github.com/GintasBazys/webdev-task.git
     ```
 
-2.  **Start developing.**
+2.  **Project start.**
 
-    Navigate into your new site’s directory and start it up.
+    Open project folder using any IDE. Using terminal, go to root folder directory and type:
 
     ```shell
-    cd my-gatsby-site/
+    npm install
     npm run develop
     ```
 
-3.  **Open the code and start customizing!**
+    <b>Website will be accessible on localhost: 8000.</b>
 
-    Your site is now running at http://localhost:8000!
+3.  Technologies used: <b>JavaScript ES6+, React, Gatsby, Styled Components, Prettier, Git VCS</b>
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+4.  **Project structure.**
 
-4.  **Learn more**
+    Three sections: Get Started, FAQ, Leaked Passwords.
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    Main component has few additional components: Footer, Navbar.
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    API folder contains request to top 50 leaked passwords.
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    Components folder contains styling using styled-components library.
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    Fonts folder contains one custom Gordita font-family file.
 
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    Layouts folder contain Footer and Header components.
 
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    Pages folder contains business page sections and elements.
 
-## 🚀 Quick start (Gatsby Cloud)
+    Styles folder contains colors and three responsive breakpoints.
 
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+    Utils folder exports all images that are used in the project.
