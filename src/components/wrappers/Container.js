@@ -5,5 +5,5 @@ export const Container = styled.div`
   display: block;
   margin: ${({ margin }) => margin || "auto"};
   padding: ${({ padding }) => padding || "0 1rem"};
-  max-width: 70.875rem;
+  max-width: ${({ maxWidth }) => maxWidth || "72.875rem"};
 `;

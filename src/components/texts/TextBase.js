@@ -6,10 +6,12 @@ export const TextBase = styled.p`
   padding: ${({ padding }) => padding || ""};
   font-family: ${({ fontFamily }) => fontFamily || "Gordita"};
   font-size: ${({ fontSize }) => fontSize || "1rem"};
-  font-weight: ${({ fontWeight }) => fontWeight || "normal"};
+  font-weight: ${({ fontWeight }) => fontWeight || "400"};
+  line-height: ${({ lineHeight }) => lineHeight || ""};
   color: ${({ color }) => color || black};
   text-align: ${({ textAlign }) => textAlign || ""};
   text-decoration: ${({ textDecoration }) => textDecoration || ""};
+  word-break: ${({ wordBreak }) => wordBreak || ""};
   text-transform: ${({ textTransform }) => textTransform || ""};
   cursor: ${({ cursor }) => cursor || ""};
 `;
@@ -22,8 +24,4 @@ export const NavbarText = styled(TextBase).attrs(({ fontSize }) => ({
   fontSize: "0.875rem",
 }))`
   cursor: pointer;
-  transition: transform 0.2s;
-  &:hover {
-    transform: scale(1.25);
-  }
 `;

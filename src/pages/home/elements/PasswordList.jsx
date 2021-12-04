@@ -8,9 +8,9 @@ import {
   TextBase,
 } from "components";
 import { fetchTopPasswords } from "apis/fetchPasswords";
-import { teal, white, lightGrey } from "styles/colors";
+import { teal, white, lightGrey, darkestGrey, darkGrey } from "styles/colors";
 import styled from "styled-components";
-import Password from "./PasswordListItem";
+
 import { useQuery } from "styles/breakpoints";
 
 const PasswordTable = () => {
@@ -27,9 +27,9 @@ const PasswordTable = () => {
         ({ count: a }, { count: b }) => parseInt(b) - parseInt(a)
       );
       setPasswords(initialSort);
-      setIsLoading(!isLoading);
+      setIsLoading(false);
     });
-  }, []);
+  }, [isLoading]);
 
   const handleSort = (event) => {
     if (event.target.value !== sortCriteria) {
@@ -49,36 +49,56 @@ const PasswordTable = () => {
     setShowAll(!showAll);
   };
 
+  const orderedList = showAll ? passwords : passwords.slice(0, 10);
+
   return (
     <Container>
-      <FlexWrapper alignItems="center">
+      <FlexWrapper
+        justifyContent="space-between"
+        margin="0 0 1.5rem 0"
+        alignItems="center"
+      >
         <TextBaseBold fontSize="1.25rem">Password</TextBaseBold>
-        <CustomSelect
-          width={isSmMobile ? "10rem" : "14rem"}
-          value={sortCriteria}
-          onChange={handleSort}
-        >
-          <option>Count</option>
-          <option>ABC</option>
-        </CustomSelect>
+        <SelectContainer>
+          <CustomSelect
+            width={isSmMobile ? "10rem" : "14rem"}
+            value={sortCriteria}
+            onChange={handleSort}
+          >
+            <option>Count</option>
+            <option>ABC</option>
+          </CustomSelect>
+        </SelectContainer>
       </FlexWrapper>
-      <Line />
+
       {isLoading && <TextBase textAlign="center">Loading...</TextBase>}
       {!isLoading && (
         <>
-          <OrderedList>
-            {showAll
-              ? passwords?.map(({ value, count }) => {
-                  return <Password key={value} value={value} count={count} />;
-                })
-              : passwords?.slice(0, 10).map(({ value, count }) => {
-                  return <Password key={value} value={value} count={count} />;
-                })}
-          </OrderedList>
+          <Table>
+            <tbody>
+              {orderedList.map(({ value, count }, index) => {
+                return (
+                  <tr key={value}>
+                    <td>
+                      <TextBase color={darkGrey}>{index + 1}.</TextBase>
+                    </td>
+                    <td>
+                      <TextBaseBold wordBreak="break-word" color={darkGrey}>
+                        {value}
+                      </TextBaseBold>
+                    </td>
+                    <td>
+                      <TextBase color={darkestGrey}>{count}</TextBase>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </Table>
           <Button
             onClick={handlePasswordShow}
             display="block"
-            margin="0 auto 6rem"
+            margin="2.25rem auto 6rem"
             background={teal}
           >
             <TextBaseBold color={white}>
@@ -93,13 +113,38 @@ const PasswordTable = () => {
 
 export default PasswordTable;
 
-const Line = styled.div`
+const Table = styled.table`
+  border-top: ${lightGrey} 1px solid;
   width: 100%;
-  background: ${lightGrey};
-  height: 1px;
-  margin: 1.5rem 0;
+  border-spacing: 0;
+  border-collapse: collapse;
+  tr {
+    border-bottom: ${lightGrey} 1px solid;
+  }
+  tr td {
+    padding: 1.5rem 0;
+    &:first-child {
+      width: 1.5rem;
+      padding-right: 1rem;
+    }
+    &:last-child {
+      padding-left: 1rem;
+      text-align: end;
+    }
+  }
 `;
 
-const OrderedList = styled.ol`
-  padding-left: 1.5rem;
+const SelectContainer = styled.div`
+  position: relative;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 8px;
+    height: 5px;
+    background-image: url("./static/select_icon.svg");
+    top: 50%;
+    transform: translateY(-50%);
+    right: 19px;
+  }
 `;

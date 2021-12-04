@@ -12,22 +12,17 @@ const Img = styled.img`
   width: ${({ width }) => width || "100%"};
   height: ${({ height }) => height || ""};
   border-radius: ${({ borderRadius }) => borderRadius || ""};
-
-  transition: transform 0.4s;
-  &:hover {
-    transform: scale(1.25);
-  }
 `;
 
-export const Image = ({ src }) => {
+export const Image = ({ src, ...rest }) => {
   useEffect(() => {
-    forceVisible(); //Forces the component to display regardless of whether the element is visible in the viewport.
+    forceVisible();
   }, []);
 
   return !images[src] ? null : (
     <LazyLoad once>
       <picture>
-        <Img src={images[src]} alt={images[src]} />
+        <Img src={images[src]} alt={images[src]} {...rest} />
       </picture>
     </LazyLoad>
   );

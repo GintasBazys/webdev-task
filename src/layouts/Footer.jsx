@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <Box background={white}>
       <Container>
-        <FlexWrapper margin="6rem 0 4.5rem">
+        <FlexWrapper margin="4.5rem 0 4.5rem">
           <FlexWrapper flexDirection="column">
             <TextBase fontSize="0.75rem" color={grey}>
               ENGAGE
@@ -24,7 +24,7 @@ const Footer = () => {
           </FlexWrapper>
           <FlexWrapper alignItems="end" textAlign="end" margin="0 0 0 auto">
             <TextBase color={darkGrey} fontSize="0.625rem">
-              Copyright © 2020 NordPass.com
+              {`Copyright © ${new Date().getFullYear()} NordPass.com`}
             </TextBase>
           </FlexWrapper>
         </FlexWrapper>

@@ -18,16 +18,27 @@ const Navbar = () => {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      window.onscroll = () => {
+      const navbar = document.querySelector(".navbar");
+
+      const adjustNavbar = () => {
+        if (!navbar) {
+          return;
+        }
+
         if (
           document.body.scrollTop > 80 ||
           document.documentElement.scrollTop > 80
         ) {
-          document.getElementsByClassName("navbar")[0].style.background = white;
+          navbar.style.cssText = `background: ${white}; box-shadow: 0 1px 1.5rem -0.813rem #000`;
         } else {
-          document.getElementsByClassName("navbar")[0].style.background =
-            lightGreenBackground;
+          navbar.style.cssText = `background: ${lightGreenBackground}; box-shadow: none;`;
         }
+      };
+
+      adjustNavbar();
+
+      window.onscroll = () => {
+        adjustNavbar();
       };
     }
   });
@@ -37,8 +48,6 @@ const Navbar = () => {
   const showNavigationItems = () => {
     setIsShown(!isShown);
   };
-
-  console.log(isSmMobile);
 
   return (
     <Wrapper className="navbar">
@@ -80,7 +89,7 @@ const Navbar = () => {
             </FlexWrapper>
           )}
         </FlexWrapper>
-        {isShown && isTablet ? <NavigationItems /> : ""}
+        {isShown && isTablet ? <NavigationItems isShown={isShown} /> : ""}
       </Container>
     </Wrapper>
   );

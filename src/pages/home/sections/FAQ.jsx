@@ -29,7 +29,7 @@ export const Faq = () => {
         Frequently asked questions
       </TextBaseBold>
       <ContainerSmall>
-        <GridWrapper padding="0 0 6rem" gap="0.75rem" margin="0 0 3rem">
+        <GridWrapper padding="0 0 6rem" gap="0.75rem">
           {FAQ_ASSETS?.map(({ id, title, description }) => {
             return (
               <DropdownWrapper key={id}>
@@ -51,8 +51,8 @@ export const Faq = () => {
 };
 
 const DropdownWrapper = styled.div`
-  padding: 1rem;
+  padding: 1rem 1.25rem 1rem 1rem;
   background-color: ${white};
-  border-radius: 0.5rem;
-  border: 0.063rem solid rgba(33, 33, 33, 0.08);
+  border-radius: 3px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05), 0px 1px 3px rgba(0, 0, 0, 0.15);
 `;

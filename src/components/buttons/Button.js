@@ -11,10 +11,9 @@ export const Button = styled.button`
   border: none;
   border-radius: ${({ borderRadius }) => borderRadius || "0.125rem"};
   cursor: pointer;
-  transition: all 0.5s ease-in;
+  transition: box-shadow 0.3s;
 
   &:hover {
-    background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
-    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+    box-shadow: 0 0.25rem 1rem 0 rgba(49, 196, 190, 0.75);
   }
 `;

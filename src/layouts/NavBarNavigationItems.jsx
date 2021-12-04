@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { FlexWrapper, Box, TextBase, Button } from "components";
 import { white, teal } from "styles/colors";
@@ -9,8 +9,21 @@ import { useQuery } from "styles/breakpoints";
 const NavigationItems = () => {
   const { isSmMobile } = useQuery();
 
+  useEffect(() => {
+    const fadeIn = document.querySelector(".fadeIn");
+
+    const adjustFadeIn = () => {
+      if (!fadeIn) {
+        return;
+      }
+      fadeIn.style.cssText = `opacity: 1`;
+    };
+
+    adjustFadeIn();
+  }, []);
+
   return (
-    <NavigationItemsBox>
+    <NavigationItemsBox className="fadeIn">
       <Box background={white}>
         <FlexWrapper flexDirection="column" alignItems="center">
           <TextBase cursor="pointer" margin="0.5rem 0 0">
@@ -45,6 +58,8 @@ const NavigationItemsBox = styled.div`
   position: absolute;
   right: 0;
   z-index: 1000;
+  opacity: 0;
+  transition: 0.4s opacity;
 `;
 
 export default NavigationItems;

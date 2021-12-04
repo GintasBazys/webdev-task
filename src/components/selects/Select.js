@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { grey } from "styles/colors";
+import { grey, white } from "styles/colors";
 
 export const CustomSelect = styled.select`
   margin: 0 0 0 auto;
@@ -8,4 +8,8 @@ export const CustomSelect = styled.select`
   box-sizing: border-box;
   border-radius: 3px;
   height: 2.625rem;
+  background: ${white};
+  padding: 0 2.5rem 0 1rem;
+  appearance: none;
+  position: relative;
 `;
