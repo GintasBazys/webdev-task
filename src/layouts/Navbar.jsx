@@ -10,11 +10,11 @@ import {
 
 import styled from "styled-components";
 import { teal, white, lightGreenBackground, black } from "styles/colors";
-import { useQuery } from "../styles/breakpoints";
+import { useQuery } from "styles/breakpoints";
 import NavigationItems from "./NavBarNavigationItems";
 
 const Navbar = () => {
-  const { isTablet } = useQuery();
+  const { isTablet, isSmMobile } = useQuery();
 
   window.onscroll = () => {
     if (
@@ -34,6 +34,8 @@ const Navbar = () => {
     setIsShown(!isShown);
   };
 
+  console.log(isSmMobile);
+
   return (
     <Wrapper className="navbar">
       <Container>
@@ -41,7 +43,10 @@ const Navbar = () => {
           <Image src="np_logo" />
           {isTablet ? (
             <FlexWrapper margin="0 0 0 auto" alignItems="center">
-              <Button background={teal}>
+              <Button
+                display={isSmMobile ? "none" : "inline-block"}
+                background={teal}
+              >
                 <TextBase fontSize="0.75rem" color={white}>
                   Open Vault
                 </TextBase>
@@ -95,21 +100,11 @@ export const BarContainer = styled.div`
 
 export const Bar1 = styled.div`
   width: 1.875rem;
-  height: 3px;
+  height: 0.188rem;
   background-color: ${black};
-  margin: 6px 0;
+  margin: 0.375rem 0;
 `;
 
-export const Bar2 = styled.div`
-  width: 1.875rem;
-  height: 3px;
-  background-color: ${black};
-  margin: 6px 0;
-`;
+export const Bar2 = styled(Bar1)``;
 
-export const Bar3 = styled.div`
-  width: 1.875rem;
-  height: 3px;
-  background-color: ${black};
-  margin: 6px 0;
-`;
+export const Bar3 = styled(Bar1)``;

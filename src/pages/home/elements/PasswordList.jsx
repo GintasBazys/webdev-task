@@ -10,7 +10,7 @@ import {
 import { fetchTopPasswords } from "apis/fetchPasswords";
 import { teal, white, lightGrey } from "styles/colors";
 import styled from "styled-components";
-import Password from "./Password";
+import Password from "./PasswordListItem";
 import { useQuery } from "styles/breakpoints";
 
 const PasswordTable = () => {
@@ -82,7 +82,7 @@ const PasswordTable = () => {
             background={teal}
           >
             <TextBaseBold color={white}>
-              {showAll ? `Show less (10)` : `Show all (${passwords.length})`}
+              {showAll ? `Show less` : `Show all (${passwords.length})`}
             </TextBaseBold>
           </Button>
         </>

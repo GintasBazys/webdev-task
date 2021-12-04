@@ -36,9 +36,9 @@
 
     Main component has few additional components: Footer, Navbar.
 
-    API folder contains request to top 50 leaked passwords.
+    API folder contains Fetch request to top 50 leaked passwords.
 
-    Components folder contains styling using styled-components library.
+    Components folder contains styling files - styled-components library.
 
     Fonts folder contains one custom Gordita font-family file.
 

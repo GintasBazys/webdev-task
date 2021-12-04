@@ -1,29 +1,39 @@
 import React from "react";
 
-import { FlexWrapper, Box, TextBase } from "components";
+import { FlexWrapper, Box, TextBase, Button } from "components";
 import { white, teal } from "styles/colors";
 
 import styled from "styled-components";
+import { useQuery } from "styles/breakpoints";
 
 const NavigationItems = () => {
+  const { isSmMobile } = useQuery();
+
   return (
     <NavigationItemsBox>
       <Box background={white}>
         <FlexWrapper flexDirection="column" alignItems="center">
-          <TextBase cursor="cursor" margin="0.5rem 0 0">
+          <TextBase cursor="pointer" margin="0.5rem 0 0">
             Features
           </TextBase>
-          <TextBase cursor="cursor" margin="0.5rem 0">
+          <TextBase cursor="pointer" margin="0.5rem 0">
             Pricing
           </TextBase>
-          <TextBase cursor="cursor">Apps</TextBase>
-          <TextBase cursor="cursor" margin="0.5rem 0">
+          <TextBase cursor="pointer">Apps</TextBase>
+          <TextBase cursor="pointer" margin="0.5rem 0">
             Blog
           </TextBase>
-          <TextBase cursor="cursor">Help</TextBase>
-          <TextBase cursor="cursor" color={teal} margin="0.5rem 0">
+          <TextBase cursor="pointer">Help</TextBase>
+          <TextBase cursor="pointer" color={teal} margin="0.5rem 0">
             My Account
           </TextBase>
+          {isSmMobile && (
+            <Button margin="0 0 1rem" background={teal}>
+              <TextBase fontSize="0.75rem" color={white}>
+                Open Vault
+              </TextBase>
+            </Button>
+          )}
         </FlexWrapper>
       </Box>
     </NavigationItemsBox>

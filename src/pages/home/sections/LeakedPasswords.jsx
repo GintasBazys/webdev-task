@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, TextBaseBold } from "components";
 import { white } from "styles/colors";
-import PasswordTable from "../elements/PasswordTable";
+import PasswordTable from "../elements/PasswordList";
 import { useQuery } from "styles/breakpoints";
 
 const LeakedPasswords = () => {
