@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Image,
   Container,
@@ -16,17 +16,21 @@ import NavigationItems from "./NavBarNavigationItems";
 const Navbar = () => {
   const { isTablet, isSmMobile } = useQuery();
 
-  window.onscroll = () => {
-    if (
-      document.body.scrollTop > 80 ||
-      document.documentElement.scrollTop > 80
-    ) {
-      document.getElementsByClassName("navbar")[0].style.background = white;
-    } else {
-      document.getElementsByClassName("navbar")[0].style.background =
-        lightGreenBackground;
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.onscroll = () => {
+        if (
+          document.body.scrollTop > 80 ||
+          document.documentElement.scrollTop > 80
+        ) {
+          document.getElementsByClassName("navbar")[0].style.background = white;
+        } else {
+          document.getElementsByClassName("navbar")[0].style.background =
+            lightGreenBackground;
+        }
+      };
     }
-  };
+  });
 
   const [isShown, setIsShown] = useState(false);
 
