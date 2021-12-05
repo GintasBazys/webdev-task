@@ -16,10 +16,6 @@ import styled from "styled-components";
 const GetStarted = () => {
   const { isTablet, isLargeLaptop, isLaptop } = useQuery();
 
-  const ImageContainer = styled.div`
-    margin: ${!isLargeLaptop ? "0 -5.75rem 0 -2rem" : ""};
-  `;
-
   return (
     <>
       <Box background={lightGreenBackground}>
@@ -51,7 +47,7 @@ const GetStarted = () => {
                 </TextBase>
               </Button>
             </FlexWrapper>
-            <ImageContainer>
+            <ImageContainer isLargeLaptop={isLargeLaptop}>
               <Image src="np_hero_image" />
             </ImageContainer>
           </GridWrapper>
@@ -62,3 +58,7 @@ const GetStarted = () => {
 };
 
 export default GetStarted;
+
+const ImageContainer = styled.div`
+  ${({ isLargeLaptop }) => !isLargeLaptop && "margin: 0 -5.75rem 0 -2rem"};
+`;

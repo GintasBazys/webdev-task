@@ -39,7 +39,7 @@ const IconArrow = styled.div`
 
   transition: transform 0.2s;
 
-  ${({ selected }) => selected && `transform: rotate(180deg);`};
+  ${({ selected }) => selected && "transform: rotate(180deg);"};
 `;
 
 const FlexWrapperStyled = styled(FlexWrapper)`
