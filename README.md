@@ -28,7 +28,7 @@
 
     <b>Website will be accessible on localhost: 8000.</b>
 
-3.  Technologies used: <b>JavaScript ES6+, React, Gatsby, Styled Components, Prettier, Git VCS</b>
+3.  Technologies used: <b>JavaScript ES6+, React, Gatsby, Styled Components, Prettier, Git VCS, TinyPNG to compress images</b>
 
 4.  **Project structure.**
 

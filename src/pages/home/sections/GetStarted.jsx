@@ -17,7 +17,7 @@ const GetStarted = () => {
   const { isTablet, isLargeLaptop, isLaptop } = useQuery();
 
   const ImageContainer = styled.div`
-    margin: ${!isLargeLaptop ? "0 -93px 0 -31px" : ""};
+    margin: ${!isLargeLaptop ? "0 -5.75rem 0 -2rem" : ""};
   `;
 
   return (

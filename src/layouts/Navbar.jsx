@@ -29,7 +29,7 @@ const Navbar = () => {
           document.body.scrollTop > 80 ||
           document.documentElement.scrollTop > 80
         ) {
-          navbar.style.cssText = `background: ${white}; box-shadow: 0 1px 1.5rem -0.813rem #000`;
+          navbar.style.cssText = `background: ${white}; box-shadow: 0 1px 1.5rem -0.813rem #000000`;
         } else {
           navbar.style.cssText = `background: ${lightGreenBackground}; box-shadow: none;`;
         }
@@ -89,7 +89,7 @@ const Navbar = () => {
             </FlexWrapper>
           )}
         </FlexWrapper>
-        {isShown && isTablet ? <NavigationItems isShown={isShown} /> : ""}
+        {isTablet ? <NavigationItems isShown={isShown} /> : ""}
       </Container>
     </Wrapper>
   );

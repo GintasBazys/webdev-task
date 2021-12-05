@@ -140,11 +140,11 @@ const SelectContainer = styled.div`
     content: "";
     display: block;
     position: absolute;
-    width: 8px;
-    height: 5px;
-    background-image: url("./static/select_icon.svg");
+    width: 0.5rem;
+    height: 0.313rem;
+    background-image: url("./html-images/select_icon.svg");
     top: 50%;
     transform: translateY(-50%);
-    right: 19px;
+    right: 1.188rem;
   }
 `;
